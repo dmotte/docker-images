@@ -1,0 +1,11 @@
+---
+version: "3"
+
+services:
+  socat:
+    image: dmotte/socat
+    build: build
+    restart: always
+    ports:
+      - 8080:8080
+    command: tcp-listen:8080,reuseaddr,fork tcp:example.com:80

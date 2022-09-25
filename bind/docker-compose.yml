@@ -1,0 +1,15 @@
+---
+version: "3"
+
+services:
+  bind:
+    image: dmotte/bind
+    build: build
+    restart: always
+    ports:
+      - "53:53"
+      - "53:53/udp"
+    volumes:
+      - ./named.conf:/etc/bind/named.conf:ro
+      - ./example.com.db:/etc/bind/example.com.db:ro
+    command: "-4" # Use IPv4 only
