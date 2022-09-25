@@ -6,8 +6,4 @@ TODO Docker images that have almost no custom code (e.g. they are specific to an
 
 TODO You can find these on Docker Hub. Built automatically https://hub.docker.com/u/dmotte
 
-TODO add dockerdesc and trivy workflows
-
-TODO see your other docker repos for other stuff that should be added and to improve README
-
-TODO check dockerhub repos created and set stuff, e.g. short description
+TODO see your other docker repos to improve README
