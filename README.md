@@ -1,9 +1,17 @@
 # docker-images
 
-:whale: Docker images that don't deserve a separate repo
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dmotte/docker-images/release?logo=github&style=flat-square)](https://github.com/dmotte/docker-images/actions)
 
-TODO Docker images that have almost no custom code (e.g. they are specific to an underlying software)
+:whale: **Docker images** that don't deserve a separate repo.
 
-TODO You can find these on Docker Hub. Built automatically https://hub.docker.com/u/dmotte
+These Docker images have almost no custom code (e.g. they are specific to an included software).
 
-TODO see your other docker repos to improve README
+> :package: These images are also [on Docker Hub](https://hub.docker.com/u/dmotte) and run on **several architectures** (e.g. amd64, arm64, ...). To see the full list of supported platforms, please refer to the [`.github/workflows/release.yml`](.github/workflows/release.yml) file. If you need an architecture which is currently unsupported, feel free to open an issue.
+
+## Development
+
+If you want to contribute to this project, you can use the following one-liner to **rebuild an image** and bring up the **Docker-Compose stack** every time you make a change to the code:
+
+```bash
+docker-compose down && docker-compose up --build
+```
