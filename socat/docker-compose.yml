@@ -8,4 +8,4 @@ services:
     restart: always
     ports:
       - 8080:8080
-    command: tcp-listen:8080,reuseaddr,fork tcp:example.com:80
+    command: tcp-listen:8080,fork,reuseaddr tcp:example.com:80
