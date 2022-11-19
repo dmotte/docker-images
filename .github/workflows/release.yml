@@ -57,14 +57,14 @@ jobs:
           # Check that what we have is actually a valid version number
           [[ "$FULL_VERSION" =~ ^v[0-9]+(\.[0-9]+)*$ ]]
 
-          echo -n "::set-output name=tags::$DOCKERHUB_USERNAME/${{ matrix.item.name }}:latest"
+          echo -n "tags=$DOCKERHUB_USERNAME/${{ matrix.item.name }}:latest" >> $GITHUB_OUTPUT
           PIECES="$(echo "$FULL_VERSION" | tr "." "\n")"
           CONCAT=""
           for i in $PIECES; do
             CONCAT="$CONCAT$i."
-            echo -n ",$DOCKERHUB_USERNAME/${{ matrix.item.name }}:${CONCAT%?}"
+            echo -n ",$DOCKERHUB_USERNAME/${{ matrix.item.name }}:${CONCAT%?}" >> $GITHUB_OUTPUT
           done
-          echo # End of line
+          echo >> $GITHUB_OUTPUT # End of line
 
       - name: Build and push
         id: docker-build
