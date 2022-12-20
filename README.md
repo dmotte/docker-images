@@ -1,6 +1,6 @@
 # docker-images
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dmotte/docker-images/release?logo=github&style=flat-square)](https://github.com/dmotte/docker-images/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/dmotte/docker-images/release.yml?branch=main&logo=github&style=flat-square)](https://github.com/dmotte/docker-images/actions)
 
 :whale: **Docker images** that don't deserve a separate repo.
 
