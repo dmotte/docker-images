@@ -3,7 +3,7 @@ version: "3"
 
 services:
   dnsmasq:
-    image: dmotte/dnsmasq
+    image: docker.io/dmotte/dnsmasq:latest
     build: build
     restart: always
     ports:

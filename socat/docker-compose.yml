@@ -3,7 +3,7 @@ version: "3"
 
 services:
   socat:
-    image: dmotte/socat
+    image: docker.io/dmotte/socat:latest
     build: build
     restart: always
     ports:
