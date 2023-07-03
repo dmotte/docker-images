@@ -1,4 +1,4 @@
-FROM alpine
+FROM docker.io/library/alpine:latest
 
 # Install required packages
 RUN apk add --no-cache bind bind-dnssec-tools
