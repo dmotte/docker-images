@@ -11,6 +11,9 @@ on:
       - dockerhub-description.md
       - .github/workflows/dockerhub-description.yml
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
 env:
   DOCKERHUB_USERNAME: dmotte
 
