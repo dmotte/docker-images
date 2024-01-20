@@ -16,7 +16,7 @@ jobs:
     with:
       script: >
         DOCKERHUB_USERNAME=dmotte
-        CICD_SCRIPTS_DIR="$(realpath "$GITHUB_ACTION_PATH/../../scripts/cicd")"
+        CICD_SCRIPTS_DIR=$(realpath "$GITHUB_ACTION_PATH/../../scripts/cicd")
         bash cicd.sh
     secrets:
       secret01: ${{ secrets.DOCKERHUB_PASSWORD }}
