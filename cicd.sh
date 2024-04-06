@@ -2,6 +2,8 @@
 
 set -e
 
+cd "$(dirname "$0")"
+
 for i in */cicd.sh; do
     echo "########## RUNNING $i"
 
