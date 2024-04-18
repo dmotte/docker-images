@@ -2,7 +2,7 @@
 version: "3"
 
 services:
-  bind:
+  main:
     image: docker.io/dmotte/bind:latest
     build: build
     restart: always
