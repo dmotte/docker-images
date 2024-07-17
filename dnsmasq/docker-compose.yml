@@ -6,8 +6,5 @@ services:
     image: docker.io/dmotte/dnsmasq:latest
     build: build
     restart: always
-    ports:
-      - "53:53"
-      - "53:53/udp"
-    volumes:
-      - ./dnsmasq.conf:/etc/dnsmasq.conf:ro
+    ports: ["53:53", "53:53/udp"]
+    volumes: [./dnsmasq.conf:/etc/dnsmasq.conf:ro]

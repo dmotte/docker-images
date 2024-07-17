@@ -6,9 +6,7 @@ services:
     image: docker.io/dmotte/bind:latest
     build: build
     restart: always
-    ports:
-      - "53:53"
-      - "53:53/udp"
+    ports: ["53:53", "53:53/udp"]
     volumes:
       - ./named.conf:/etc/bind/named.conf:ro
       - ./example.com.db:/etc/bind/example.com.db:ro
