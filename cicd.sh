@@ -2,6 +2,8 @@
 
 set -e
 
+# This script should be run automatically by the CI/CD
+
 cd "$(dirname "$0")"
 
 for i in */cicd.sh; do
