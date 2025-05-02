@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 readonly sub_expr='echo "v$(docker run --rm "$tmp_img" -v | head -1 | cut -d" " -f2)"'
 
 IMG_AUTHOR=dmotte IMG_NAME=bind \
-IMG_DESCRIPTION='BIND DNS server on alpine' \
+IMG_DESCRIPTION='BIND DNS server on Alpine Linux' \
 IMG_FULL_DESCRIPTION_FILE=../dockerhub-description.md \
 IMG_PLATFORMS=linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 \
 CICD_VERSION_EXPR="version_by_expr ${CICD_GIT_REF@Q} ${sub_expr@Q}" \

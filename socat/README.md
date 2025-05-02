@@ -1,6 +1,6 @@
 # socat
 
-:whale: **socat** on alpine.
+:whale: **socat** on Alpine Linux.
 
 ## Usage
 
