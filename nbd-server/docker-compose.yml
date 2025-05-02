@@ -1,0 +1,10 @@
+---
+services:
+  main:
+    image: docker.io/dmotte/nbd-server:latest
+    build: build
+    restart: always
+    ports: ["127.0.0.1:10809:10809"]
+    volumes:
+      - ./nbd-server.conf:/etc/nbd-server/config:ro
+      - ./myimage.img:/myimage.img
