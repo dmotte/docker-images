@@ -43,8 +43,8 @@ sudo nbd-client -d /dev/nbd0
 
 ## Tips
 
-- TODO you can also use `nbd-client ... -u ...` + https://manpages.debian.org/bookworm/nbd-server/nbd-server.5.en.html#unixsock
-- TODO this by default runs as root inside the container, but you can extend this image adding an unprivileged user
+- :bulb: This image by default **runs `nbd-server` as root** inside the container, but it should be very easy to extend it and make it run as an **unprivileged user** instead
+- :bulb: Instead of using TCP port `10809`, you can also make `nbd-server` listen on a **Unix domain socket**, using the [`unixsock` config option](https://manpages.debian.org/bookworm/nbd-server/nbd-server.5.en.html#unixsock), and then connect to it using [`nbd-client`'s `-u` flag](https://manpages.debian.org/bookworm/nbd-client/nbd-client.8.en.html#unix)
 
 ## Development
 
