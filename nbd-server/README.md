@@ -53,4 +53,12 @@ TODO warning: NBD does **not use encryption or authentication** by default. Expo
 
 ## Links
 
-TODO see https://github.com/dmotte/misc/tree/main/awesome
+- https://en.wikipedia.org/wiki/Network_block_device
+- https://github.com/NetworkBlockDevice/nbd
+- https://github.com/NetworkBlockDevice/nbd?tab=readme-ov-file#using-nbd
+- https://packages.debian.org/bookworm/nbd-client
+- https://packages.debian.org/bookworm/nbd-server
+- https://manpages.debian.org/bookworm/nbd-client/nbd-client.8.en.html
+- https://manpages.debian.org/bookworm/nbd-server/nbd-server.1.en.html
+- https://manpages.debian.org/bookworm/nbd-server/nbd-server.5.en.html
+- https://medium.com/@aysadx/linux-nbd-introduction-to-linux-network-block-devices-143365f1901b
