@@ -1,6 +1,6 @@
 # dnsmasq
 
-:whale: **dnsmasq** on Alpine Linux.
+:whale: **dnsmasq** on _Alpine Linux_.
 
 ## Usage
 

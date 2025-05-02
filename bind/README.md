@@ -1,6 +1,6 @@
 # bind
 
-:whale: **BIND** DNS server on Alpine Linux.
+:whale: **BIND** DNS server on _Alpine Linux_.
 
 ## Usage
 
