@@ -33,23 +33,22 @@ sudo modprobe nbd
 sudo nbd-client 127.0.0.1 -N myimage /dev/nbd0
 ```
 
+> :warning: **Warning**: NBD **does NOT use encryption or authentication** by default. Exposing it directly can allow **unauthorized access** or **data interception**. For secure use, always **tunnel NBD traffic over SSH** or run it behind a secure VPN or firewall-restricted interface.
+
 To disconnect:
 
 ```bash
 sudo nbd-client -d /dev/nbd0
 ```
 
+## Tips
+
+- TODO you can also use `nbd-client ... -u ...` + https://manpages.debian.org/bookworm/nbd-server/nbd-server.5.en.html#unixsock
+- TODO this by default runs as root inside the container, but you can extend this image adding an unprivileged user
+
 ## Development
 
 See the [related section in the main README](/README.md#development).
-
-## TODO
-
-TODO you can also use `nbd-client ... -u ...` + https://manpages.debian.org/bookworm/nbd-server/nbd-server.5.en.html#unixsock
-
-TODO this by default runs as root inside the container, but you can extend this image adding an unprivileged user
-
-TODO warning: NBD does **not use encryption or authentication** by default. Exposing it directly can allow **unauthorized access** or **data interception**. For secure use, always tunnel NBD traffic over **SSH** or run it behind a secure VPN or firewall-restricted interface.
 
 ## Links
 
