@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "$0")"
 
 # shellcheck disable=SC2016
-readonly sub_expr='echo "v$(docker run --rm "$tmp_img" -V | head -2 | tail -1 | cut -d" " -f3)"'
+readonly sub_expr='echo "v$(docker run --rm "$tmp_img" -V | head -n2 | tail -1 | cut -d" " -f3)"'
 
 IMG_AUTHOR=dmotte IMG_NAME=socat \
 IMG_DESCRIPTION='socat on Alpine Linux' \

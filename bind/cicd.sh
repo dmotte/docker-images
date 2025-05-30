@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "$0")"
 
 # shellcheck disable=SC2016
-readonly sub_expr='echo "v$(docker run --rm "$tmp_img" -v | head -1 | cut -d" " -f2)"'
+readonly sub_expr='echo "v$(docker run --rm "$tmp_img" -v | head -n1 | cut -d" " -f2)"'
 
 IMG_AUTHOR=dmotte IMG_NAME=bind \
 IMG_DESCRIPTION='BIND DNS server on Alpine Linux' \
