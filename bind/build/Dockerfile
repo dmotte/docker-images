@@ -4,7 +4,7 @@ FROM docker.io/library/alpine:latest
 RUN apk add --no-cache bind bind-dnssec-tools
 
 # Remove auto-generated rndc.key
-RUN rm -f /etc/bind/rndc.key
+RUN rm -fv /etc/bind/rndc.key
 
 EXPOSE 53 53/udp
 
