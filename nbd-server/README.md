@@ -33,7 +33,7 @@ sudo modprobe nbd
 sudo nbd-client 127.0.0.1 -N myimage /dev/nbd0
 ```
 
-> :warning: **Warning**: NBD **does NOT use encryption or authentication** by default. Exposing it directly can allow **unauthorized access** or **data interception**. For secure use, always **tunnel NBD traffic over SSH** or run it behind a secure VPN or firewall-restricted interface.
+> :warning: **Warning**: NBD **does NOT use encryption or authentication** by default. Exposing it directly can allow **unauthorized access** and **data interception**. For secure use, always **tunnel NBD traffic over SSH** or run it behind a secure VPN.
 
 To disconnect:
 
