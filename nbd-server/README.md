@@ -9,7 +9,7 @@ The [`docker-compose.yml`](docker-compose.yml) file contains a usage example for
 Create a `myimage.img` file using a command like the following:
 
 ```bash
-dd if=/dev/zero of=myimage.img bs=1M count=32 status=progress
+fallocate -vl32M myimage.img
 ```
 
 To start the Docker-Compose stack in daemon (detached) mode:
