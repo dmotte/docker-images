@@ -14,6 +14,7 @@ jobs:
   job:
     uses: dmotte/misc/.github/workflows/cicd-with-script.yml@main
     with:
+      fetch-depth: 2 # Needed to use "git diff --quiet HEAD^ HEAD -- ." in CI
       script: >
         DOCKERHUB_USERNAME=dmotte
         CICD_SCRIPTS_DIR="$(realpath "$GITHUB_ACTION_PATH/../../scripts/cicd")"
