@@ -6,6 +6,12 @@ set -e
 
 cd "$(dirname "$0")"
 
+[ "$GITHUB_EVENT_NAME" != schedule ] && git diff --quiet HEAD^ HEAD -- . && {
+    echo "Skipping $0 as there are no changes in $PWD in the latest commit" \
+        'and this is not a scheduled run'
+    exit
+}
+
 # shellcheck disable=SC2016
 readonly sub_expr='echo "v$(docker run --rm "$tmp_img" -V | head -n1 | cut -d" " -f5)"'
 
