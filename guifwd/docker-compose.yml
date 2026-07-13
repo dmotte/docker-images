@@ -1,0 +1,17 @@
+---
+services:
+  main:
+    image: docker.io/dmotte/guifwd:latest
+    build: build
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${XDG_RUNTIME_DIR:?}/${WAYLAND_DISPLAY:?}:/opt/guifwd/host/wayland.sock:ro
+      - /tmp/.X11-unix/X0:/opt/guifwd/host/x11.sock:ro
+      - ${XAUTHORITY:?}:/opt/guifwd/host/x11.xauth:ro
+    environment:
+      USERNGO_NAME: myuser
+      USERNGO_PSW: myuser
+      USERNGO_SUDOER: "true"
+      USERNGO_NOPASSWD: "true"
