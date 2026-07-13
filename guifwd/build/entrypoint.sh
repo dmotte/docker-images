@@ -48,7 +48,7 @@ if [ -e /opt/guifwd/host/wayland.sock ]; then
     # We use Waypipe's "-n" ("--no-gpu") flag to be on the safe side
     # shellcheck disable=SC2016
     waypipe -ns/tmp/waypipe.sock server -- bash -ec '
-        chmod -v 666 $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
+        chmod -v 666 "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY"
         exec bash /opt/userngo/main.sh /opt/guifwd/shell.sh'
 else
     bash /opt/userngo/main.sh /opt/guifwd/shell.sh
