@@ -14,6 +14,6 @@ services:
       - ./data-root:/opt/sshset/data # If running sshd as root
       # - ./data-unpriv:/opt/sshset/data # If running sshd as unprivileged user
     environment:
-      SSHSET_GEN_AUTHKEY: "true"
       # USERNGO_NAME: myuser # Uncomment to run sshd as unprivileged user
+      SSHSET_GEN_AUTHKEY: "true"
     command: -oClientAliveInterval=30
