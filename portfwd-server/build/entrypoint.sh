@@ -8,39 +8,6 @@ readonly sshset_data_dir=${SSHSET_DATA_DIR:-/opt/sshset/data}
 
 ################################################################################
 
-if [ "$EUID" = 0 ]
-    then readonly sshd_config_d=/etc/ssh/sshd_config.d
-    else readonly sshd_config_d=~/.ssh/sshd_config.d
-fi
-
-install -Tvm644 /dev/stdin "$sshd_config_d/90-portfwd-server.conf" << 'EOF'
-LogLevel VERBOSE
-
-PermitRootLogin no
-
-PubkeyAuthentication yes
-AuthorizedKeysFile .ssh/authorized_keys
-PasswordAuthentication no
-
-# Disable almost every service globally
-AllowAgentForwarding no
-AllowStreamLocalForwarding no
-AllowTcpForwarding no
-GatewayPorts no
-X11Forwarding no
-PermitTunnel no
-PermitListen none
-PermitOpen none
-PermitTTY no
-ForceCommand echo "This SSH server can only be used for port forwarding"
-
-# Don't look up the remote host name. This usually results in
-# faster connection times
-UseDNS no
-EOF
-
-################################################################################
-
 if [ "$EUID" = 0 ]; then
     users=$(find "$sshset_data_dir" -mindepth 2 -maxdepth 2 \
         -type d -path "$sshset_data_dir/users/*" -printf '%f\n')
@@ -84,6 +51,39 @@ fi
 ################################################################################
 
 bash /opt/sshset/main.sh
+
+################################################################################
+
+if [ "$EUID" = 0 ]
+    then readonly sshd_config_d=/etc/ssh/sshd_config.d
+    else readonly sshd_config_d=~/.ssh/sshd_config.d
+fi
+
+install -DTvm644 /dev/stdin "$sshd_config_d/90-portfwd-server.conf" << 'EOF'
+LogLevel VERBOSE
+
+PermitRootLogin no
+
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication no
+
+# Disable almost every service globally
+AllowAgentForwarding no
+AllowStreamLocalForwarding no
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+PermitTunnel no
+PermitListen none
+PermitOpen none
+PermitTTY no
+ForceCommand echo "This SSH server can only be used for port forwarding"
+
+# Don't look up the remote host name. This usually results in
+# faster connection times
+UseDNS no
+EOF
 
 ################################################################################
 
