@@ -1,0 +1,6 @@
+/data/host-keys/
+/data/users/*/authorized-keys/
+/data/authorized-keys/
+/data-*/host-keys/
+/data-*/users/*/authorized-keys/
+/data-*/authorized-keys/

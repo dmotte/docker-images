@@ -1,0 +1,19 @@
+---
+services:
+  main:
+    image: docker.io/dmotte/portfwd-server:latest
+    build: build
+    restart: always
+    ports:
+      - "2222:22" # If running sshd as root
+      # - "2222:2222" # If running sshd as unprivileged user
+      - "8001:8001"
+      - "8002:8002"
+      - "8003:8003"
+    volumes:
+      - ./data-root:/opt/sshset/data # If running sshd as root
+      # - ./data-unpriv:/opt/sshset/data # If running sshd as unprivileged user
+    environment:
+      SSHSET_GEN_AUTHKEY: "true"
+      # USERNGO_NAME: myuser # Uncomment to run sshd as unprivileged user
+    command: -oClientAliveInterval=30
