@@ -1,0 +1,14 @@
+---
+services:
+  main:
+    image: docker.io/dmotte/portfwd-client:latest
+    build: build
+    restart: always
+    ports: ["8080:8080"]
+    volumes:
+      - ./data:/opt/sshset/data
+    environment:
+      USERNGO_NAME: myuser
+      SSHSET_GEN_IDKEY: "true"
+      PORTFWD_CLIENT_AUTORESTART: 30s
+    command: myuser@10.0.2.15 -p2222 -L0.0.0.0:8080:api.ipify.org:80 -R0.0.0.0:8080:api.ipify.org:80

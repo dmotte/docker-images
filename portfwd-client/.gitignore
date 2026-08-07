@@ -1,0 +1,8 @@
+/data/known-hosts/
+/data/users/*/known-hosts/
+/data/users/*/identity-keys/
+/data/identity-keys/
+/data-*/known-hosts/
+/data-*/users/*/known-hosts/
+/data-*/users/*/identity-keys/
+/data-*/identity-keys/
