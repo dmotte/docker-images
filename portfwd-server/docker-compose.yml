@@ -16,4 +16,4 @@ services:
     environment:
       # USERNGO_NAME: myuser # Uncomment to run sshd as unprivileged user
       SSHSET_GEN_AUTHKEY: "true"
-    command: -oClientAliveInterval=30
+    command: -oClientAliveInterval=60

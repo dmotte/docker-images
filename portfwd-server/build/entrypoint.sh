@@ -80,6 +80,8 @@ PermitOpen none
 PermitTTY no
 ForceCommand echo "This SSH server can only be used for port forwarding"
 
+ClientAliveInterval 30
+
 # Don't look up the remote host name. This usually results in
 # faster connection times
 UseDNS no
