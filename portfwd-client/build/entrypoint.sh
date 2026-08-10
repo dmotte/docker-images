@@ -2,7 +2,7 @@
 
 set -e
 
-# Some examples: ".5", "0.5s", "30", "30s", "5m", "1h"
+# Some examples: ".5", "0.5", "0.5s", "30", "30s", "5m", "1h"
 readonly autorestart=${PORTFWD_CLIENT_AUTORESTART:--1}
 
 ################################################################################
@@ -13,10 +13,12 @@ bash /opt/sshset/main.sh
 
 [ -e ~/.ssh/config ] || install -Tvm644 /dev/null ~/.ssh/config
 
-echo 'Adding portfwd-client default config to ~/.ssh/config'
+comment='# Default config for portfwd-client'
+if ! grep -Fx "$comment" ~/.ssh/config >/dev/null; then
+    echo 'Adding portfwd-client default config to ~/.ssh/config'
 
-cat << 'EOF' >> ~/.ssh/config
-# Default config for portfwd-client
+    cat << EOF >> ~/.ssh/config
+$comment
 
 SessionType none
 
@@ -26,6 +28,7 @@ LogLevel DEBUG
 ServerAliveInterval 30
 ExitOnForwardFailure yes
 EOF
+fi
 
 ################################################################################
 
