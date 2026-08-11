@@ -66,7 +66,9 @@ PermitRootLogin no
 
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
+HostbasedAuthentication no
 PasswordAuthentication no
+PermitEmptyPasswords no
 
 # Disable almost every service globally
 AllowAgentForwarding no
