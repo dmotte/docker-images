@@ -4,13 +4,13 @@
 
 ## Usage
 
-The [`docker-compose.yml`](docker-compose.yml) file contains a usage example for this image. Unless you want to build the image from scratch, comment out the `build: build` line to use the pre-built one from _Docker Hub_ instead.
-
 Create a `myimage.img` file using a command like the following:
 
 ```bash
 fallocate -vl32M myimage.img
 ```
+
+The [`docker-compose.yml`](docker-compose.yml) file contains a usage example for this image. Unless you want to build the image from scratch, comment out the `build: build` line to use the pre-built one from _Docker Hub_ instead.
 
 To start the Docker-Compose stack in daemon (detached) mode:
 
