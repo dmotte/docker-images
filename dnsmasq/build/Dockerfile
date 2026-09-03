@@ -1,7 +1,11 @@
-# Tested with docker.io/library/alpine:3.18.2
+# syntax=docker/dockerfile:1
+
+# Tested with docker.io/library/alpine:3.24.1
 FROM docker.io/library/alpine:latest
 
-RUN apk add --no-cache dnsmasq
+RUN <<'EOF' /bin/sh -e
+    apk add --no-cache dnsmasq
+EOF
 
 EXPOSE 53 53/udp
 
