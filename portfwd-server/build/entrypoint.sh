@@ -59,7 +59,7 @@ if [ "$EUID" = 0 ]
     else readonly sshd_config_d=~/.ssh/sshd_config.d
 fi
 
-install -DTvm644 /dev/stdin "$sshd_config_d/90-portfwd-server.conf" << 'EOF'
+install -DTvm644 /dev/stdin "$sshd_config_d/90-portfwd-server.conf" <<'EOF'
 LogLevel VERBOSE
 
 PermitRootLogin no

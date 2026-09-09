@@ -17,7 +17,7 @@ comment='# Default config for portfwd-client'
 if ! grep -Fx "$comment" ~/.ssh/config >/dev/null; then
     echo 'Adding portfwd-client default config to ~/.ssh/config'
 
-    cat << EOF >> ~/.ssh/config
+    cat <<EOF >> ~/.ssh/config
 $comment
 
 SessionType none
