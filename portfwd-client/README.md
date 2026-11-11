@@ -16,6 +16,8 @@ Then you'll need an SSH "**known hosts**" file containing the **public key(s)** 
 ssh-keyscan -p2222 10.0.2.15 > data/known-hosts/10-0-2-15-p2222.txt
 ```
 
+> **Important**: always **double-check the retrieved host keys** before trusting them, to prevent _man-in-the-middle_ attacks.
+
 The [`docker-compose.yml`](docker-compose.yml) file contains a usage example for this image. Unless you want to build the image from scratch, comment out the `build: build` line to use the pre-built one from _Docker Hub_ instead.
 
 To start the Docker-Compose stack in daemon (detached) mode:
